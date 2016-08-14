@@ -1,5 +1,7 @@
 # OpenWeatherMap
 
+![Demo](./demo.gif)
+
 A sample project that uses the OpenWeatherMap API in order to show the weather
 
 For more information about the OpenWeatherMap API used, please see [here](http://www.openweathermap.org/forecast5)
@@ -19,9 +21,9 @@ assertion failed:
 
 -----> PLEASE SET YOUR API KEY <-----
 
-: file <your-path>/OpenWeatherMap/OpenWeatherMap-Sample/Helpers/Network/OpenWeatherMapAPIClient.swift, 
+: file <your-path>/OpenWeatherMap/OpenWeatherMap-Sample/Helpers/Network/NSURL+OpenWeatherMapAdditions.swift, 
 
-line 38
+line 13
 ```
 
 Once an API Key is set up, the project should execute successfully.
@@ -40,4 +42,14 @@ This could easily be further extended to the rest of the components used in this
 
 
 # Further Improvements
+
+- Persistence layer (e.g. Core Data) to allow to see the weather while offline
+- Support multiple places (e.g. use `UserDefaults` to persist the ones added, allow to search for places)
+- Proper error handling
+	- Handle the case where the user does not allow access to the User's Location
+	- Handle invalid data/http error codes
+- Better unit test coverage
+- Allow to press on each card in order to access further information (e.g. sea level, humidity, etc)
+- Pull to refresh
+- Allow the user to re-order cards
 
