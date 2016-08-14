@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Simply Weather-->
@@ -17,21 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aim-bH-bq2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_img" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-yu-ht6" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmg-eF-4XH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qa2-3w-3pf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aim-bH-bq2">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Aim-bH-bq2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1mK-ej-CZl"/>
+                            <constraint firstAttribute="trailing" secondItem="MOR-yu-ht6" secondAttribute="trailing" id="2rT-FS-KKV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Aim-bH-bq2" secondAttribute="bottom" id="6bs-1p-snD"/>
                             <constraint firstItem="Aim-bH-bq2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Yc-rl-lQz"/>
+                            <constraint firstItem="MOR-yu-ht6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q51-84-Nvw"/>
                             <constraint firstAttribute="trailing" secondItem="Aim-bH-bq2" secondAttribute="trailing" id="SLU-ut-Mu3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="vmg-eF-4XH" secondAttribute="bottom" id="Zp2-ny-ecG"/>
+                            <constraint firstItem="vmg-eF-4XH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bo2-LW-UAP"/>
+                            <constraint firstAttribute="trailing" secondItem="vmg-eF-4XH" secondAttribute="trailing" id="e2Y-Qz-pqb"/>
+                            <constraint firstItem="vmg-eF-4XH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hqY-0N-PUx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="MOR-yu-ht6" secondAttribute="bottom" id="qrb-bx-y98"/>
+                            <constraint firstAttribute="topMargin" secondItem="MOR-yu-ht6" secondAttribute="top" id="uNg-En-Esg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Simply Weather" id="RZ9-4D-M2k">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jSE-Ev-cil"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jSE-Ev-cil">
+                            <connections>
+                                <action selector="didTapAddPlaceButton:" destination="BYZ-38-t0r" id="rwK-z1-z3Z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Aim-bH-bq2" id="5YQ-7L-27u"/>
@@ -60,4 +84,7 @@
             <point key="canvasLocation" x="708" y="1199"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background_img" width="375" height="667"/>
+    </resources>
 </document>

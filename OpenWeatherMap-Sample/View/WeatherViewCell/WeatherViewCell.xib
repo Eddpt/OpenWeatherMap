@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A286a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="271" id="9BG-Vf-R71" customClass="WeatherViewCell" customModule="OpenWeatherMap_Sample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9BG-Vf-R71" id="Zf1-ic-3jr">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="217.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGb-a0-Igu" userLabel="Card View">
+                        <rect key="frame" x="24" y="24" width="327" height="170"/>
+                        <subviews>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLF-dm-7gQ" userLabel="Place Name Label">
+                                <rect key="frame" x="16" y="16" width="295" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cVo-P7-7UK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aez-He-oa2" userLabel="Line Separator">
+                                <rect key="frame" x="16" y="45" width="295" height="1"/>
+                                <color key="backgroundColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="5QV-3s-gvP"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbk-hQ-Q83">
+                                <rect key="frame" x="16" y="54" width="295" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GwD-ja-y6v">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" placeholder="YES" id="MZD-Ii-0iN"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="GwD-ja-y6v" secondAttribute="bottom" id="3DQ-bD-qEf"/>
+                                    <constraint firstItem="GwD-ja-y6v" firstAttribute="top" secondItem="kbk-hQ-Q83" secondAttribute="top" id="6X0-En-Noi"/>
+                                    <constraint firstItem="GwD-ja-y6v" firstAttribute="height" secondItem="kbk-hQ-Q83" secondAttribute="height" constant="-10" id="PTh-s2-mQq"/>
+                                    <constraint firstItem="GwD-ja-y6v" firstAttribute="centerY" secondItem="kbk-hQ-Q83" secondAttribute="centerY" id="XzX-jn-tDF"/>
+                                    <constraint firstAttribute="trailing" secondItem="GwD-ja-y6v" secondAttribute="trailing" id="ZfE-fE-VMD"/>
+                                    <constraint firstItem="GwD-ja-y6v" firstAttribute="leading" secondItem="kbk-hQ-Q83" secondAttribute="leading" id="a4x-OO-cZP"/>
+                                    <constraint firstItem="GwD-ja-y6v" firstAttribute="centerX" secondItem="kbk-hQ-Q83" secondAttribute="centerX" id="jCD-RB-MCD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XzX-jn-tDF"/>
+                                        <exclude reference="jCD-RB-MCD"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kbk-hQ-Q83" firstAttribute="leading" secondItem="EGb-a0-Igu" secondAttribute="leading" constant="16" id="1DX-ck-6EI"/>
+                            <constraint firstAttribute="bottom" secondItem="kbk-hQ-Q83" secondAttribute="bottom" constant="16" id="42k-Ro-7zC"/>
+                            <constraint firstItem="nLF-dm-7gQ" firstAttribute="top" secondItem="EGb-a0-Igu" secondAttribute="top" constant="16" id="6UU-wn-jyc"/>
+                            <constraint firstItem="kbk-hQ-Q83" firstAttribute="top" secondItem="Aez-He-oa2" secondAttribute="bottom" constant="8" id="7Xu-xJ-38H"/>
+                            <constraint firstItem="kbk-hQ-Q83" firstAttribute="leading" secondItem="Aez-He-oa2" secondAttribute="leading" id="7os-50-YRh"/>
+                            <constraint firstItem="kbk-hQ-Q83" firstAttribute="trailing" secondItem="Aez-He-oa2" secondAttribute="trailing" id="FSV-2e-0jV"/>
+                            <constraint firstItem="Aez-He-oa2" firstAttribute="leading" secondItem="nLF-dm-7gQ" secondAttribute="leading" id="cBp-3x-Vli"/>
+                            <constraint firstItem="Aez-He-oa2" firstAttribute="trailing" secondItem="nLF-dm-7gQ" secondAttribute="trailing" id="ggU-mJ-lyA"/>
+                            <constraint firstItem="Aez-He-oa2" firstAttribute="top" secondItem="nLF-dm-7gQ" secondAttribute="bottom" constant="8" id="k02-it-6tI"/>
+                            <constraint firstAttribute="trailing" secondItem="nLF-dm-7gQ" secondAttribute="trailing" constant="16" id="p0K-wf-JEe"/>
+                            <constraint firstItem="nLF-dm-7gQ" firstAttribute="leading" secondItem="EGb-a0-Igu" secondAttribute="leading" constant="16" id="sYm-Cp-VH3"/>
+                            <constraint firstAttribute="trailing" secondItem="kbk-hQ-Q83" secondAttribute="trailing" constant="16" id="vUe-9u-ZNZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7os-50-YRh"/>
+                                <exclude reference="FSV-2e-0jV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="EGb-a0-Igu" firstAttribute="leading" secondItem="Zf1-ic-3jr" secondAttribute="leading" constant="24" id="EVb-7g-A3A"/>
+                    <constraint firstAttribute="bottom" secondItem="EGb-a0-Igu" secondAttribute="bottom" constant="24" id="JOw-T0-cim"/>
+                    <constraint firstItem="EGb-a0-Igu" firstAttribute="top" secondItem="Zf1-ic-3jr" secondAttribute="top" constant="24" id="JYr-ta-iZQ"/>
+                    <constraint firstAttribute="trailing" secondItem="EGb-a0-Igu" secondAttribute="trailing" constant="24" id="Y7a-px-jeT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="placeNameLabel" destination="nLF-dm-7gQ" id="mpB-KJ-JQG"/>
+                <outlet property="scrollView" destination="kbk-hQ-Q83" id="3a5-ZM-krY"/>
+                <outlet property="stackView" destination="GwD-ja-y6v" id="kxb-8Y-JHK"/>
+            </connections>
+            <point key="canvasLocation" x="111.5" y="86"/>
+        </tableViewCell>
+    </objects>
+</document>

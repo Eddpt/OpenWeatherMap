@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A286a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5Ps-na-Kmh" customClass="WeatherRecordView" customModule="OpenWeatherMap_Sample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-3N-HL4" userLabel="Temperature Label">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="32.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Hhn-0U-enb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTE-fq-m29">
+                    <rect key="frame" x="17" y="32.5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cTE-fq-m29" secondAttribute="height" multiplier="1:1" id="UTj-BX-Qup"/>
+                        <constraint firstAttribute="width" constant="25" id="lFW-ve-gZH"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLd-jG-vkn" userLabel="Time Label">
+                    <rect key="frame" x="0.0" y="57.5" width="60" height="32.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="rOM-3N-HL4" firstAttribute="leading" secondItem="5Ps-na-Kmh" secondAttribute="leading" id="2xm-Mr-Kja"/>
+                <constraint firstItem="cTE-fq-m29" firstAttribute="top" secondItem="rOM-3N-HL4" secondAttribute="bottom" id="4ND-Ov-M2i"/>
+                <constraint firstItem="cTE-fq-m29" firstAttribute="centerX" secondItem="5Ps-na-Kmh" secondAttribute="centerX" id="4rX-L7-qK0"/>
+                <constraint firstAttribute="trailing" secondItem="rOM-3N-HL4" secondAttribute="trailing" id="9Qz-cR-Wft"/>
+                <constraint firstItem="xLd-jG-vkn" firstAttribute="leading" secondItem="5Ps-na-Kmh" secondAttribute="leading" id="NUu-Mr-Ot4"/>
+                <constraint firstItem="cTE-fq-m29" firstAttribute="centerY" secondItem="5Ps-na-Kmh" secondAttribute="centerY" id="T3L-Y8-H61"/>
+                <constraint firstAttribute="bottom" secondItem="xLd-jG-vkn" secondAttribute="bottom" id="aSk-7S-iAy"/>
+                <constraint firstAttribute="trailing" secondItem="xLd-jG-vkn" secondAttribute="trailing" id="cSk-WL-HXC"/>
+                <constraint firstItem="rOM-3N-HL4" firstAttribute="top" secondItem="5Ps-na-Kmh" secondAttribute="top" id="p4A-72-zuF"/>
+                <constraint firstItem="xLd-jG-vkn" firstAttribute="top" secondItem="cTE-fq-m29" secondAttribute="bottom" id="zH3-3f-WjZ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="temperatureLabel" destination="rOM-3N-HL4" id="97a-XB-fyQ"/>
+                <outlet property="timeLabel" destination="xLd-jG-vkn" id="RiJ-29-oYi"/>
+                <outlet property="weatherIconImageView" destination="cTE-fq-m29" id="3g9-CT-S1K"/>
+            </connections>
+            <point key="canvasLocation" x="208" y="192"/>
+        </view>
+    </objects>
+</document>
